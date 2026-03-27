@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paneth's Disease — The Hidden Story of Crohn's</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F7F5F0;
+    --bg-card: #FFFFFF;
+    --bg-accent: #EDE9E0;
+    --text-primary: #1A1A1A;
+    --text-secondary: #4A4A4A;
+    --text-muted: #7A7A7A;
+    --accent: #C45D3E;
+    --accent-light: #F0DDD5;
+    --accent-dark: #9E3A1E;
+    --border: #D8D3CA;
+    --border-light: #E8E4DC;
+    --highlight: #FFF8E7;
+    --serif: 'Source Serif 4', Georgia, serif;
+    --sans: 'DM Sans', -apple-system, sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    font-size: 14.5px;
+    line-height: 1.72;
+    color: var(--text-primary);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* HEADER */
+  .site-header {
+    border-bottom: 1px solid var(--border);
+    background: var(--bg);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .header-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .header-top {
+    padding: 28px 0 12px;
+  }
+
+  .header-top h1 {
+    font-family: var(--serif);
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--text-primary);
+  }
+
+  .header-top h1 span {
+    color: var(--accent);
+  }
+
+  .header-top .subtitle {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 2px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+  }
+
+  /* TABS */
+  .tab-nav {
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .tab-nav::-webkit-scrollbar { display: none; }
+
+  .tab-btn {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-muted);
+    background: none;
+    border: none;
+    padding: 12px 20px 14px;
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+    letter-spacing: 0.2px;
+  }
+
+  .tab-btn:hover {
+    color: var(--text-secondary);
+  }
+
+  .tab-btn.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* MAIN CONTENT */
+  .main-content {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 40px 32px 80px;
+  }
+
+  .tab-panel {
+    display: none;
+    animation: fadeIn 0.35s ease;
+  }
+
+  .tab-panel.active {
+    display: block;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* TYPOGRAPHY */
+  .prose { max-width: 720px; }
+
+  .prose h2 {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 700;
+    margin: 48px 0 16px;
+    color: var(--text-primary);
+    letter-spacing: -0.3px;
+    line-height: 1.3;
+  }
+
+  .prose h2:first-child { margin-top: 0; }
+
+  .prose h3 {
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 600;
+    margin: 36px 0 12px;
+    color: var(--text-primary);
+    line-height: 1.35;
+  }
+
+  .prose p {
+    margin-bottom: 16px;
+    color: var(--text-secondary);
+  }
+
+  .prose strong {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  .prose em {
+    font-style: italic;
+  }
+
+  .lead-text {
+    font-family: var(--serif);
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--text-primary);
+    margin-bottom: 32px;
+    font-weight: 300;
+  }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+
+  /* QUOTE BLOCKS */
+  .pull-quote {
+    border-left: 3px solid var(--accent);
+    padding: 16px 0 16px 24px;
+    margin: 32px 0;
+    font-family: var(--serif);
+    font-size: 16.5px;
+    font-style: italic;
+    color: var(--text-primary);
+    line-height: 1.6;
+    font-weight: 400;
+  }
+
+  .pull-quote .attribution {
+    display: block;
+    font-family: var(--sans);
+    font-size: 12px;
+    font-style: normal;
+    color: var(--text-muted);
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* CALLOUT */
+  .callout {
+    background: var(--highlight);
+    border: 1px solid #E8DFC0;
+    border-radius: 6px;
+    padding: 20px 24px;
+    margin: 28px 0;
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: var(--text-secondary);
+  }
+
+  .callout-title {
+    font-weight: 700;
+    color: var(--text-primary);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+
+  /* TIMELINE */
+  .timeline {
+    position: relative;
+    padding-left: 36px;
+    max-width: 760px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: var(--border);
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 36px;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -33px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2.5px solid var(--border);
+    transition: all 0.2s ease;
+  }
+
+  .timeline-item.major::before {
+    border-color: var(--accent);
+    background: var(--accent);
+    box-shadow: 0 0 0 4px var(--accent-light);
+  }
+
+  .timeline-year {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--accent);
+    margin-bottom: 4px;
+    letter-spacing: 0.5px;
+  }
+
+  .timeline-title {
+    font-family: var(--serif);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+    line-height: 1.35;
+  }
+
+  .timeline-desc {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .timeline-people {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 6px;
+    font-style: italic;
+  }
+
+  /* PLAYER CARDS */
+  .players-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 760px;
+  }
+
+  .player-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 28px 28px 24px;
+    transition: box-shadow 0.2s ease;
+  }
+
+  .player-card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  }
+
+  .player-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+
+  .player-initials {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .player-name {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.25;
+  }
+
+  .player-affiliation {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  .player-role {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 3px 10px;
+    border-radius: 3px;
+    margin-top: 4px;
+  }
+
+  .player-bio {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+
+  .player-key {
+    font-size: 12.5px;
+    background: var(--bg-accent);
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin-top: 14px;
+    color: var(--text-secondary);
+    line-height: 1.55;
+  }
+
+  .player-key strong {
+    color: var(--text-primary);
+  }
+
+  /* EXEC SUMMARY METRICS */
+  .metric-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin: 28px 0;
+    max-width: 760px;
+  }
+
+  .metric-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .metric-value {
+    font-family: var(--serif);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1.1;
+  }
+
+  .metric-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* DEEP DIVE DIAGRAM BOXES */
+  .pathway-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 24px 28px;
+    margin: 24px 0;
+    max-width: 720px;
+  }
+
+  .pathway-box h4 {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .pathway-flow {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+
+  .pathway-node {
+    background: var(--bg-accent);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .pathway-node.defect {
+    background: #FDE8E8;
+    border-color: #E8A0A0;
+    color: #8B2020;
+  }
+
+  .pathway-node.result {
+    background: var(--accent-light);
+    border-color: var(--accent);
+    color: var(--accent-dark);
+  }
+
+  .pathway-arrow {
+    color: var(--text-muted);
+    font-size: 16px;
+  }
+
+  /* SEPARATOR */
+  .sep {
+    width: 48px;
+    height: 2px;
+    background: var(--accent);
+    margin: 40px 0;
+  }
+
+  /* FOOTER */
+  .site-footer {
+    border-top: 1px solid var(--border);
+    padding: 24px 32px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-muted);
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 700px) {
+    .header-inner, .main-content { padding-left: 20px; padding-right: 20px; }
+    .header-top h1 { font-size: 22px; }
+    .tab-btn { padding: 10px 14px; font-size: 12px; }
+    .prose h2 { font-size: 19px; }
+    .lead-text { font-size: 16px; }
+    .metric-row { grid-template-columns: 1fr; }
+    .player-header { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-top">
+      <h1>Paneth's <span>Disease</span></h1>
+      <p class="subtitle">The hidden story of Crohn's disease, innate immunity, and the cells that guard the crypt</p>
+    </div>
+    <nav class="tab-nav">
+      <button class="tab-btn active" data-tab="story">The Story</button>
+      <button class="tab-btn" data-tab="timeline">Timeline</button>
+      <button class="tab-btn" data-tab="deepdive">Deep Dive: Wnt &amp; Monocytes</button>
+      <button class="tab-btn" data-tab="players">Key Players</button>
+      <button class="tab-btn" data-tab="exec">Executive Summary</button>
+    </nav>
+  </div>
+</header>
+
+<!-- CONTENT -->
+<main class="main-content">
+
+<!-- ===================== TAB 1: THE STORY ===================== -->
+<section class="tab-panel active" id="story">
+  <div class="prose">
+    <p class="section-label">Origin</p>
+    <h2>Vienna, 1888: A Man Sees Something He Cannot Explain</h2>
+
+    <p class="lead-text">Imagine Josef Paneth — a young Austrian physiologist working in Vienna in the 1880s. This is Freud's city, Freud's era. The psychoanalytic revolution is gestating. Everyone is interested in the hidden interior life of human beings.</p>
+
+    <p>Paneth, looking down his microscope at thin slices of intestinal tissue, sees something strange at the very bottom of the intestinal crypts: cells packed with large, conspicuous granules. Dense, refractile, obviously full of <em>something</em>. He draws them carefully. He describes them in detail. He even credits Schwalbe, who had spotted them a few years earlier in Freiburg.</p>
+
+    <p>But it would take nearly a century to figure out what these granule-stuffed cells were actually doing. As late as 1969, an exhaustive study on the Paneth cell in gastrointestinal disease speculated that the granules contained some kind of zymogen — possibly a peptidase involved in digestion. Researchers were staring at one of the body's most sophisticated weapons systems and concluding it was part of the kitchen.</p>
+
+    <p>It's as if someone found a rack of loaded rifles in a castle and filed a report on kitchen utensils.</p>
+
+    <div class="pull-quote">
+      There's something almost poetically fitting about Paneth living in Freud's Vienna — a city obsessed with the hidden, the repressed, the unconscious. Because what the Paneth cell turned out to be was, in a sense, the unconscious immune system of the gut.
+    </div>
+
+    <div class="sep"></div>
+
+    <p class="section-label">The Skin Question</p>
+    <h2>Why Doesn't <em>E. coli</em> Infect Your Face?</h2>
+
+    <p>Fast-forward a hundred years, to the dermatology department at the University of Kiel in northern Germany. Jens-Michael Schröder and Jürgen Harder are asking a deceptively simple question about skin: <strong>why doesn't it get infected?</strong></p>
+
+    <p>Your skin is covered in bacteria constantly. You touch filthy things. You sweat. And yet skin infections from common gut organisms like <em>E. coli</em> are remarkably rare. Why?</p>
+
+    <p>They showed that keratinocytes — ordinary skin cells — secrete a protein called <strong>psoriasin</strong> (S100A7) that is a potent <em>E. coli</em>-killing compound. When they treated human skin with antibodies that blocked psoriasin, the skin lost its <em>E. coli</em>-killing properties. The skin had a chemical defense shield — an invisible film of endogenous antibiotics.</p>
+
+    <p>Earlier, in 1997, Harder and Schröder had published a landmark paper in <em>Nature</em> describing <strong>human beta-defensin-2 (HBD-2)</strong>, isolated from psoriatic scale extracts — the first human epithelial peptide antibiotic shown to be induced by bacteria and cytokines. Skin was not a passive barrier. It was an active immune organ manufacturing its own antibiotics.</p>
+
+    <div class="callout">
+      <div class="callout-title">The Kiel School's Key Insight</div>
+      Healthy human skin is always covered with microorganisms, but usually not infected. This unexpected phenomenon, together with the observation that microbe densities are rather constant at skin surfaces, led to the hypothesis that skin contains a "chemical barrier" which controls the growth of microorganisms at body surfaces. The same question — applied to the gut — would change the entire Crohn's disease field.
+    </div>
+
+    <p>This is the world <strong>Jan Wehkamp</strong> trained in. He worked with Harder and Schröder at Kiel, steeped in the dermatology of antimicrobial peptides. He was a skin guy who knew what endogenous antibiotics looked like, how they were regulated, and what happened when they failed.</p>
+
+    <p>And then he looked at the gut and asked the most obvious question nobody was properly asking: <strong>if the skin has a chemical defense shield, where is the equivalent in the intestine — the most bacteria-dense environment in the entire body?</strong></p>
+
+    <div class="sep"></div>
+
+    <p class="section-label">The Leap</p>
+    <h2>An Outsider's Advantage</h2>
+
+    <p>The IBD field in the early 2000s was dominated by the autoimmune paradigm — T-cells attacking self, adaptive immunity gone haywire. The therapeutic revolution was anti-TNF (infliximab). The conceptual framework was: <em>too much immune response.</em></p>
+
+    <p>But Wehkamp, coming from dermatology, was thinking about the opposite problem: too <em>little</em> defense. In dermatology, the insight had been that psoriasis patients have <em>more</em> antimicrobial peptides (which is why they rarely get skin infections despite broken, inflamed skin), while eczema patients have <em>fewer</em> (which is why they get colonized by staph). The question wasn't always about overactive immunity — sometimes the problem was a failure of the first line of defense.</p>
+
+    <p>Crohn's disease is linked to "pathogen poor" living conditions in the Western world. In developing countries, infectious intestinal diseases are common, yet idiopathic inflammatory bowel disease, especially Crohn's, practically does not exist. The first occurrence of Crohn's disease often starts after a bacterial infection. These epidemiological facts should have screamed "innate defense failure" — but the T-cell framework absorbed them into theories about immune regulation rather than letting them point where they naturally pointed: toward the antimicrobial barrier.</p>
+
+    <div class="sep"></div>
+
+    <p class="section-label">The Genetic Bridge</p>
+    <h2>NOD2: How a Genetic Clue Became a Cellular Story</h2>
+
+    <p>In 2001, Jean-Pierre Hugot in Paris and Yasunori Ogura working with Gabriel Nuñez and Judy Cho in the United States independently identified <strong>NOD2</strong> mutations as the first susceptibility gene for Crohn's disease. This was the first real genetic handle on the disease.</p>
+
+    <p>But here's the detail that mattered: <strong>the NOD2 mutation was associated specifically with ileal Crohn's disease — not with the colonic type.</strong> If a gene predisposes you to inflammation only in the small intestine, then whatever that gene controls must matter specifically there. And what lives specifically in the small intestine, not the colon? Paneth cells.</p>
+
+    <p>Initially, NOD2 was understood through monocytes and NF-κB. The field's reflex was to route the gene through the familiar adaptive immunity framework. But Wehkamp, with his defensin-measurement expertise from Kiel and access to colonoscopy samples, did the critical experiment: measure Paneth cell defensins in patients with and without the NOD2 mutation.</p>
+
+    <p>In 2004, he showed NOD2 mutations were associated with diminished mucosal α-defensin expression. Then came the landmark 2005 <em>PNAS</em> paper: patients with ileal Crohn's had reduced antibacterial activity in their intestinal mucosal extracts, driven by decreased expression of Paneth cell α-defensins HD5 and HD6. The specific decrease was <strong>independent of the degree of inflammation</strong> and was not observed in colonic Crohn's, ulcerative colitis, or pouchitis.</p>
+
+    <div class="pull-quote">
+      That independence from inflammation severity is the finding that separates cause from consequence. The inflammation wasn't destroying the Paneth cells; the Paneth cells were failing first, and the inflammation was what happened next.
+      <span class="attribution">On the 2005 Wehkamp et al. PNAS paper</span>
+    </div>
+
+    <p>But it was too early. The field wasn't ready. The T-cell paradigm was deeply entrenched. Anti-TNF was working (for some patients, some of the time), which seemed to validate the adaptive immunity model. A story about epithelial cells failing to secrete enough endogenous antibiotics was conceptually foreign to most GI immunologists. It took years for the idea to take root.</p>
+
+    <p>In 2010, Wehkamp and Stange published what is probably the most provocative framing in the field: they "provocatively (and tongue in cheek) renamed this entity of ileal Crohn's disease as <strong>'Paneth's disease.'</strong>"</p>
+
+    <div class="pull-quote">
+      Paneth cells are Janus-faced: they were given the title "maestros of the crypt" but they may also be the culprits in Crohn's disease, hiding backstage behind the T-cells.
+      <span class="attribution">Wehkamp &amp; Stange, 2020</span>
+    </div>
+
+    <p>They were always there. Someone just had to know what to look for.</p>
+  </div>
+</section>
+
+<!-- ===================== TAB 2: TIMELINE ===================== -->
+<section class="tab-panel" id="timeline">
+  <div class="prose">
+    <p class="section-label">Chronology</p>
+    <h2>A Century of Discovery</h2>
+    <p>Key milestones in the journey from an unidentified granule-filled cell to the central node of ileal Crohn's disease pathogenesis.</p>
+  </div>
+  <div class="timeline" style="margin-top: 32px;">
+
+    <div class="timeline-item">
+      <div class="timeline-year">1872</div>
+      <div class="timeline-title">First Observation</div>
+      <div class="timeline-desc">Gustav Schwalbe in Freiburg first observes granule-filled cells at the base of intestinal crypts. Their function is unknown.</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-year">1888</div>
+      <div class="timeline-title">Josef Paneth's Description</div>
+      <div class="timeline-desc">Josef Paneth in Vienna provides a detailed morphological description of these cells, crediting Schwalbe's earlier observation. The cells will eventually bear his name.</div>
+      <div class="timeline-people">Josef Paneth — University of Vienna</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-year">1932</div>
+      <div class="timeline-title">Crohn's Disease Described</div>
+      <div class="timeline-desc">Burrill Bernard Crohn, Leon Ginzburg, and Gordon Oppenheimer describe the characteristic pattern of chronic ileal inflammation at Mount Sinai Hospital, New York.</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-year">1969</div>
+      <div class="timeline-title">Still Misunderstood</div>
+      <div class="timeline-desc">An exhaustive study on Paneth cells in GI disease still speculates that their granules contain digestive zymogens. Nearly a century after discovery, their function remains unknown.</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-year">~1970s–80s</div>
+      <div class="timeline-title">Lysozyme Detected</div>
+      <div class="timeline-desc">Lysozyme is identified in Paneth cells, providing the first hint of their antimicrobial role. But the most important products — the α-defensins — remain undiscovered.</div>
+    </div>
+
+    <div class="timeline-item major">
+      <div class="timeline-year">1997</div>
+      <div class="timeline-title">HBD-2: First Human Epithelial Antibiotic</div>
+      <div class="timeline-desc">Harder, Bartels, Christophers, and Schröder publish in <em>Nature</em> the discovery of human beta-defensin-2 from psoriatic skin — proving epithelial cells make their own antibiotics. This creates the conceptual framework Wehkamp will later apply to the gut.</div>
+      <div class="timeline-people">Jürgen Harder, Jens-Michael Schröder — University of Kiel, Dermatology</div>
+    </div>
+
+    <div class="timeline-item major">
+      <div class="timeline-year">2001</div>
+      <div class="timeline-title">NOD2 — First Crohn's Susceptibility Gene</div>
+      <div class="timeline-desc">Three independent studies identify NOD2/CARD15 mutations as the first genetic susceptibility locus for Crohn's disease. Hugot (Paris) and Ogura/Nuñez/Cho (US) publish simultaneously in <em>Nature</em>. The mutation is linked specifically to ileal disease, not colonic.</div>
+      <div class="timeline-people">Jean-Pierre Hugot — Paris; Yasunori Ogura, Gabriel Nuñez, Judy Cho — US</div>
+    </div>
+
+    <div class="timeline-item major">
+      <div class="timeline-year">2004</div>
+      <div class="timeline-title">NOD2 Linked to Defensin Deficiency</div>
+      <div class="timeline-desc">Wehkamp demonstrates that NOD2 mutations in Crohn's patients are associated with diminished mucosal α-defensin expression in Paneth cells — the first direct link between the genetic risk factor and the antimicrobial barrier.</div>
+      <div class="timeline-people">Jan Wehkamp, Eduard Stange — Published in <em>Gut</em></div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-year">2005</div>
+      <div class="timeline-title">Psoriasin — The Skin's E. coli Shield</div>
+      <div class="timeline-desc">Gläser, Harder, and Schröder publish in <em>Nature Immunology</em> showing psoriasin (S100A7) is the principal <em>E. coli</em>-killing molecule on human skin — proving epithelial surfaces maintain active chemical barriers against specific pathogens.</div>
+      <div class="timeline-people">Regine Gläser, Jürgen Harder, Jens-Michael Schröder — University of Kiel</div>
+    </div>
+
+    <div class="timeline-item major">
+      <div class="timeline-year">2005</div>
+      <div class="timeline-title">Reduced Paneth Cell α-Defensins in Ileal Crohn's</div>
+      <div class="timeline-desc">The landmark <em>PNAS</em> paper. Wehkamp, Stange, and Bevins show ileal Crohn's patients have specifically reduced HD5/HD6, independent of inflammation severity. Not observed in colonic CD, UC, or pouchitis. Defensin deficiency is cause, not consequence.</div>
+      <div class="timeline-people">Jan Wehkamp, Eduard Stange, Charles Bevins — Published in <em>PNAS</em></div>
+    </div>
+
+    <div class="timeline-item major">
+      <div class="timeline-year">2007</div>
+      <div class="timeline-title">Wnt/TCF-4 Mechanism Identified</div>
+      <div class="timeline-desc">Wehkamp links the Paneth cell defensin deficiency to reduced Wnt pathway transcription factor TCF-4, independent of NOD2 genotype. This explains defensin deficiency in the majority of patients without NOD2 mutations.</div>
+      <div class="timeline-people">Jan Wehkamp, Hans Clevers, Eduard Stange, Charles Bevins</div>
+    </div>
+
+    <div class="timeline-item major">
+      <div class="timeline-year">2008</div>
+      <div class="timeline-title">Autophagy — ATG16L1 and Paneth Cells</div>
+      <div class="timeline-desc">Cadwell, Virgin, and Stappenbeck publish in <em>Nature</em> showing ATG16L1 (a GWAS hit for Crohn's) is selectively important for Paneth cell granule exocytosis. Crohn's patients homozygous for the risk allele show similar Paneth cell abnormalities.</div>
+      <div class="timeline-people">Ken Cadwell, Herbert "Skip" Virgin, Thaddeus Stappenbeck — Washington University</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-year">2010</div>
+      <div class="timeline-title">"Paneth's Disease" Coined</div>
+      <div class="timeline-desc">Wehkamp and Stange publish their provocative reframing, proposing that ileal Crohn's disease be thought of as "Paneth's disease" — a primary defect in innate antimicrobial defense rather than an autoimmune condition.</div>
+    </div>
+
+    <div class="timeline-item major">
+      <div class="timeline-year">2013–2014</div>
+      <div class="timeline-title">Paneth Cell Phenotyping as Biomarker</div>
+      <div class="timeline-desc">Stappenbeck, Liu, and McGovern develop a morphological classification system for Paneth cell defects (Type I vs Type II phenotypes). Genetic variants (NOD2 + ATG16L1) show additive effects. Phenotypes are stable over 20+ years and predict disease recurrence.</div>
+      <div class="timeline-people">Thaddeus Stappenbeck, Ta-Chiang Liu, Dermot McGovern</div>
+    </div>
+
+    <div class="timeline-item major">
+      <div class="timeline-year">2015</div>
+      <div class="timeline-title">Monocyte–Paneth Cell Crosstalk Discovered</div>
+      <div class="timeline-desc">Courth, Wehkamp, and Stange show that healthy monocytes induce Paneth cell defensins via Wnt ligands — but Crohn's disease monocytes cannot. A bone-marrow-derived immune defect feeds back to cripple the epithelial barrier. Published in <em>PNAS</em>.</div>
+      <div class="timeline-people">Lioba Courth, Jan Wehkamp, Eduard Stange — University of Tübingen</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-year">2016–2020</div>
+      <div class="timeline-title">Paneth Cell–Microbiome Connection</div>
+      <div class="timeline-desc">Multiple studies connect Paneth cell phenotypes to mucosal microbiome composition and dysbiosis in CD patients. Type I Paneth cell phenotype correlates with reduced microbial diversity and altered anti-inflammatory taxa.</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-year">2020</div>
+      <div class="timeline-title">Ten-Year Update Review</div>
+      <div class="timeline-desc">Wehkamp and Stange publish a comprehensive update reaffirming the centrality of Paneth cell defects in ileal Crohn's — including genetic risk factors (NOD2, ATG16L1, XBP1, LRRK2), Wnt pathway dysregulation, monocyte crosstalk, and lifestyle factors like smoking.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TAB 3: DEEP DIVE ===================== -->
+<section class="tab-panel" id="deepdive">
+  <div class="prose">
+    <p class="section-label">Mechanism</p>
+    <h2>Wnt Signaling, Stem Cell Differentiation, and the Monocyte Connection</h2>
+
+    <p class="lead-text">The Paneth cell defensin deficiency in Crohn's disease is not a single-mechanism problem. It arises from multiple converging failures — in how stem cells become Paneth cells, in how Paneth cells package and secrete their products, and in how immune cells support the whole system from outside.</p>
+
+    <div class="sep"></div>
+
+    <h2>How Stem Cells Become Paneth Cells</h2>
+
+    <p>The intestinal epithelium renews itself every 3–5 days — one of the fastest rates of cell turnover in the body. This renewal is driven by <strong>LGR5-positive intestinal stem cells</strong> that reside at the very bottom of the crypts of Lieberkühn, intermingled with Paneth cells.</p>
+
+    <p>These stem cells are pluripotent within the intestinal context: they can become absorptive enterocytes, goblet cells, enteroendocrine cells, or Paneth cells. Which lineage a progenitor cell commits to depends on the transcription factor environment it encounters during differentiation.</p>
+
+    <p>For Paneth cells, the critical pathway is <strong>canonical Wnt signaling</strong>. The Wnt pathway works through a cascade: Wnt ligands bind to Frizzled/LRP receptors on the cell surface, which prevents degradation of β-catenin inside the cell. Stabilized β-catenin translocates to the nucleus and interacts with TCF/LEF transcription factors — particularly <strong>TCF-4 (TCF7L2)</strong> — which then activate Paneth cell–specific genes, including the defensin genes DEFA5 and DEFA6 (encoding HD5 and HD6).</p>
+
+    <div class="pathway-box">
+      <h4>Healthy Wnt Pathway → Paneth Cell Maturation</h4>
+      <div class="pathway-flow">
+        <span class="pathway-node">Wnt ligands</span>
+        <span class="pathway-arrow">→</span>
+        <span class="pathway-node">Frizzled / LRP receptors</span>
+        <span class="pathway-arrow">→</span>
+        <span class="pathway-node">β-catenin stabilized</span>
+        <span class="pathway-arrow">→</span>
+        <span class="pathway-node">TCF-4 activation</span>
+        <span class="pathway-arrow">→</span>
+        <span class="pathway-node result">HD5 / HD6 expression</span>
+      </div>
+    </div>
+
+    <p>Hans Clevers' group demonstrated that the Paneth cell gene program is critically dependent on TCF-4. Conditional deletion of Frizzled-5 in adult mice led to mispositioning of Paneth cells and loss of defensin expression. Even mild reductions in β-catenin mRNA levels severely disrupted Paneth cell development while leaving general intestinal proliferation largely intact — showing that Paneth cells are uniquely sensitive to Wnt dosage.</p>
+
+    <h3>What Goes Wrong in Ileal Crohn's Disease</h3>
+
+    <p>In 2007, Wehkamp showed that TCF-4 expression is reduced in ileal Crohn's disease and that its levels correlate tightly with HD5 and HD6 expression. Crucially, this defect was <strong>independent of NOD2 genotype</strong> — meaning there is a Wnt-pathway-mediated defensin deficiency mechanism operating even in the ~65% of Crohn's patients who don't carry NOD2 mutations.</p>
+
+    <p>Using a murine TCF-4 knockout model, they demonstrated that even a modest reduction in TCF-4 (in heterozygous +/- mice) caused a significant decrease in both Paneth cell α-defensin levels and bacterial killing activity. The factory's instruction manual was fading, and fewer and fewer workers were getting proper training.</p>
+
+    <div class="pathway-box">
+      <h4>Defective Wnt Pathway in Ileal Crohn's</h4>
+      <div class="pathway-flow">
+        <span class="pathway-node defect">↓ Wnt ligands</span>
+        <span class="pathway-arrow">→</span>
+        <span class="pathway-node defect">↓ TCF-4</span>
+        <span class="pathway-arrow">→</span>
+        <span class="pathway-node defect">↓ HD5 / HD6</span>
+        <span class="pathway-arrow">→</span>
+        <span class="pathway-node defect">↓ Antimicrobial barrier</span>
+        <span class="pathway-arrow">→</span>
+        <span class="pathway-node defect">Bacterial invasion</span>
+        <span class="pathway-arrow">→</span>
+        <span class="pathway-node defect">Inflammation</span>
+      </div>
+    </div>
+
+    <div class="sep"></div>
+
+    <h2>The Monocyte Plot Twist</h2>
+
+    <p>For years, the defensin deficiency was understood as an epithelial-intrinsic problem — something wrong with the Paneth cells themselves or the stem cell differentiation program that produces them. The 2015 discovery by Courth, Wehkamp, and Stange revealed something far more unexpected: <strong>the immune system was supposed to be feeding the epithelial defense system, and in Crohn's disease, that feed was broken.</strong></p>
+
+    <h3>Healthy Monocytes Rescue Paneth Cell Defensins</h3>
+
+    <p>Using cultures of human ileal tissue, they showed that the secretome of peripheral blood mononuclear cells (PBMCs) from healthy controls could <strong>restore the attenuated Paneth cell α-defensin expression</strong> characteristic of patients with ileal Crohn's disease. When they dissected which component of the PBMC secretome was responsible, they found it was <strong>Wnt ligands</strong> — specifically produced by classical monocytes.</p>
+
+    <p>Cytokines like TNF-α, IFN-γ, and IL-22 — the usual suspects in immune-epithelial signaling — were ineffective. Only Wnt ligands drove the defensin induction.</p>
+
+    <div class="pathway-box">
+      <h4>Healthy Monocyte → Paneth Cell Crosstalk</h4>
+      <div class="pathway-flow">
+        <span class="pathway-node">Monocytes</span>
+        <span class="pathway-arrow">→</span>
+        <span class="pathway-node">Wnt3, Wnt3a, Wnt1</span>
+        <span class="pathway-arrow">→</span>
+        <span class="pathway-node">Frizzled receptor on Paneth cell</span>
+        <span class="pathway-arrow">→</span>
+        <span class="pathway-node result">↑ HD5 / HD6</span>
+      </div>
+    </div>
+
+    <h3>Crohn's Disease Monocytes Fail</h3>
+
+    <p>The critical finding: <strong>monocytes from Crohn's disease patients could not do this.</strong> Analysis showed that CD monocytes express significantly lower levels of canonical Wnt ligands — Wnt3, Wnt3a, Wnt1, and the Wnt secretion mediator wntless (Evi/Wls). The immune cells that were supposed to be supporting the epithelial barrier were themselves defective.</p>
+
+    <div class="pathway-box">
+      <h4>Defective Crosstalk in Ileal Crohn's Disease</h4>
+      <div class="pathway-flow">
+        <span class="pathway-node defect">CD Monocytes</span>
+        <span class="pathway-arrow">→</span>
+        <span class="pathway-node defect">↓ Wnt ligands</span>
+        <span class="pathway-arrow">→</span>
+        <span class="pathway-node defect">↓ HD5 / HD6 induction</span>
+        <span class="pathway-arrow">→</span>
+        <span class="pathway-node defect">Barrier failure</span>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-title">Why This Matters</div>
+      <p style="margin-bottom: 0;">The monocyte–Wnt–Paneth cell axis means that the defensin deficiency in Crohn's has <em>multiple independent upstream causes</em>: (1)&nbsp;NOD2 mutations affecting the cell's own bacterial sensing, (2)&nbsp;Wnt/TCF-4 defects affecting stem cell differentiation, and (3)&nbsp;monocyte dysfunction affecting external Wnt supply. Different roads to the same destination — a thinned chemical barrier, bacterial invasion, and downstream inflammation. Because Wnt ligands can overcome defects from various etiologies, this mechanism represents a potential <strong>therapeutic target</strong>.</p>
+    </div>
+
+    <div class="sep"></div>
+
+    <h2>The Autophagy Layer</h2>
+
+    <p>Independently, the 2008 work from Cadwell, Virgin, and Stappenbeck at Washington University added another dimension. They showed that the autophagy protein ATG16L1 — identified by GWAS as a Crohn's risk gene — is selectively important for Paneth cell granule packaging and secretion.</p>
+
+    <p>ATG16L1-deficient Paneth cells showed striking abnormalities in the granule exocytosis pathway — they couldn't properly package or deliver their antimicrobial cargo. If the Wehkamp/Stange work showed the factory was producing less ammunition, the Cadwell/Virgin/Stappenbeck work showed the <strong>shipping department was also broken.</strong></p>
+
+    <p>Stappenbeck's subsequent phenotyping work showed that NOD2 and ATG16L1 risk alleles have <strong>additive effects</strong> on Paneth cell abnormalities — carrying more risk alleles correlates with higher proportions of defective Paneth cells. The system is built on multiple redundant supports, and each genetic hit removes one.</p>
+
+    <h3>The Full Picture: Multiple Roads to a Thinned Barrier</h3>
+
+    <div class="pathway-box">
+      <h4>Converging Defects in Paneth Cell Function</h4>
+      <div style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.7;">
+        <p style="margin-bottom: 8px;"><strong style="color: var(--accent);">Genetic:</strong> NOD2 mutations → impaired bacterial sensing; ATG16L1 T300A → defective autophagy and granule packaging; XBP1 → ER stress; LRRK2 → additional autophagy defects</p>
+        <p style="margin-bottom: 8px;"><strong style="color: var(--accent);">Transcriptional:</strong> Reduced TCF-4 / Wnt pathway activity → impaired stem cell differentiation into functional Paneth cells → lower baseline defensin expression</p>
+        <p style="margin-bottom: 8px;"><strong style="color: var(--accent);">Immune crosstalk:</strong> CD monocytes fail to produce Wnt ligands → cannot support Paneth cell defensin expression from outside the epithelium</p>
+        <p style="margin-bottom: 0;"><strong style="color: var(--accent);">Environmental:</strong> Tobacco smoking, Western diet, and childhood antibiotic use also impact Paneth cell function, adding lifestyle-driven risk on top of genetic susceptibility</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TAB 4: KEY PLAYERS ===================== -->
+<section class="tab-panel" id="players">
+  <div class="prose">
+    <p class="section-label">Personalities</p>
+    <h2>The People Behind the Science</h2>
+    <p>The Paneth cell–Crohn's disease story was built by researchers spanning genetics, dermatology, gastroenterology, cell biology, and pathology. No single team owns it, but each carried a critical piece.</p>
+  </div>
+
+  <div class="players-grid" style="margin-top: 28px;">
+
+    <div class="player-card">
+      <div class="player-header">
+        <div class="player-initials">JW</div>
+        <div>
+          <div class="player-name">Jan Wehkamp</div>
+          <div class="player-affiliation">University of Tübingen → Janssen Immunology R&D → AbbVie Immunology Strategy</div>
+          <div class="player-role">Defensin Pioneer</div>
+        </div>
+      </div>
+      <div class="player-bio">
+        <p>Trained in the Kiel dermatology school under Schröder and Harder, where he absorbed the antimicrobial peptide framework that had been developed for skin. Brought a dermatologist's eye for epithelial innate defense to the gut — a field dominated by T-cell immunologists. Collaborated with Eduard Stange (gastroenterology) and Charles Bevins (microbiology/immunology at UC Davis) to build the central body of work linking Paneth cell defensin deficiency to ileal Crohn's. An Emmy Noether Scholar of the Deutsche Forschungsgemeinschaft and European Research Council grantee. Later moved into industry at Janssen.</p>
+      </div>
+      <div class="player-key">
+        <strong>Key contributions:</strong> NOD2–defensin link (2004); reduced Paneth cell α-defensins in ileal CD (<em>PNAS</em>, 2005); Wnt/TCF-4 mechanism (2007); "Paneth's disease" framing (2010); monocyte–Wnt crosstalk (<em>PNAS</em>, 2015)
+      </div>
+    </div>
+
+    <div class="player-card">
+      <div class="player-header">
+        <div class="player-initials">ES</div>
+        <div>
+          <div class="player-name">Eduard F. Stange</div>
+          <div class="player-affiliation">University of Tübingen / Robert Bosch Hospital, Stuttgart</div>
+          <div class="player-role">Clinical Gastroenterologist</div>
+        </div>
+      </div>
+      <div class="player-bio">
+        <p>A senior German gastroenterologist who provided the clinical framework, patient samples, and disease expertise that grounded Wehkamp's molecular work in clinical reality. Co-author on virtually all the major Paneth cell–Crohn's papers, Stange brought decades of GI clinical experience and an institutional base that gave the program continuity. Importantly, he had the intellectual flexibility to support an innate immunity hypothesis at a time when the field was thoroughly committed to adaptive immunity models.</p>
+      </div>
+      <div class="player-key">
+        <strong>Key contributions:</strong> Co-architect of the "Paneth's disease" hypothesis; clinical sample networks across German IBD centers; sustained the research program through periods of field resistance
+      </div>
+    </div>
+
+    <div class="player-card">
+      <div class="player-header">
+        <div class="player-initials">JH</div>
+        <div>
+          <div class="player-name">Jürgen Harder &amp; Jens-Michael Schröder</div>
+          <div class="player-affiliation">University of Kiel, Department of Dermatology</div>
+          <div class="player-role">Kiel Antimicrobial Peptide School</div>
+        </div>
+      </div>
+      <div class="player-bio">
+        <p>The Kiel dermatology group pioneered the study of skin antimicrobial peptides. Schröder's lab developed the methods to extract and identify defensins from skin. Harder discovered HBD-2 (1997, <em>Nature</em>) and HBD-3 from psoriatic scales. Together with Gläser, they identified psoriasin as the skin's principal <em>E. coli</em> barrier (2005, <em>Nature Immunology</em>). This body of work established the conceptual framework — "epithelial surfaces as active immune organs" — that Wehkamp transferred to the gut.</p>
+      </div>
+      <div class="player-key">
+        <strong>Key contributions:</strong> Discovery of HBD-2 and HBD-3; psoriasin as skin chemical barrier; proof that epithelial cells manufacture endogenous antibiotics in vivo; intellectual training ground for Wehkamp
+      </div>
+    </div>
+
+    <div class="player-card">
+      <div class="player-header">
+        <div class="player-initials">JPH</div>
+        <div>
+          <div class="player-name">Jean-Pierre Hugot</div>
+          <div class="player-affiliation">Fondation Jean Dausset–CEPH, Paris</div>
+          <div class="player-role">NOD2 Genetics (Paris)</div>
+        </div>
+      </div>
+      <div class="player-bio">
+        <p>French geneticist who used positional cloning to identify NOD2 as the first susceptibility gene for Crohn's disease, published in <em>Nature</em> in 2001 simultaneously with Ogura et al. His finding that NOD2 mutations are specifically associated with ileal (not colonic) Crohn's disease provided the geographic clue that eventually pointed directly at Paneth cells.</p>
+      </div>
+      <div class="player-key">
+        <strong>Key contribution:</strong> First identification of NOD2/CARD15 variants associated with Crohn's disease susceptibility (<em>Nature</em>, 2001)
+      </div>
+    </div>
+
+    <div class="player-card">
+      <div class="player-header">
+        <div class="player-initials">YO</div>
+        <div>
+          <div class="player-name">Yasunori Ogura, Gabriel Nuñez &amp; Judy Cho</div>
+          <div class="player-affiliation">University of Michigan / Yale / Mount Sinai</div>
+          <div class="player-role">NOD2 Genetics (US)</div>
+        </div>
+      </div>
+      <div class="player-bio">
+        <p>Independently and simultaneously with Hugot, this US-based team identified a frameshift mutation in NOD2 associated with Crohn's disease susceptibility. Published in the same issue of <em>Nature</em> (2001). Nuñez had been studying intracellular pattern-recognition receptors; Cho brought clinical genetics expertise. Their work, combined with Hugot's, opened the genetic era of IBD research.</p>
+      </div>
+      <div class="player-key">
+        <strong>Key contribution:</strong> NOD2 frameshift mutation in Crohn's disease (<em>Nature</em>, 2001); subsequent signaling studies showing NOD2 loss-of-function phenotype
+      </div>
+    </div>
+
+    <div class="player-card">
+      <div class="player-header">
+        <div class="player-initials">TS</div>
+        <div>
+          <div class="player-name">Thaddeus S. Stappenbeck</div>
+          <div class="player-affiliation">Washington University, St. Louis → Cleveland Clinic</div>
+          <div class="player-role">Cell Biology &amp; Phenotyping</div>
+        </div>
+      </div>
+      <div class="player-bio">
+        <p>Pathologist and cell biologist who made two distinct major contributions. First, with Herbert "Skip" Virgin and Ken Cadwell, he showed that the autophagy gene ATG16L1 selectively disrupts Paneth cell granule exocytosis (2008, <em>Nature</em>). Second, with Ta-Chiang Liu and Dermot McGovern, he developed the morphological Paneth cell phenotyping system (Type I/II) that translates cell biology into a clinical biomarker — predicting disease recurrence after surgery.</p>
+      </div>
+      <div class="player-key">
+        <strong>Key contributions:</strong> ATG16L1–Paneth cell connection (2008); Paneth cell phenotype classification (2013–2014); demonstration of phenotype stability over 20+ years; prognostic biomarker development
+      </div>
+    </div>
+
+    <div class="player-card">
+      <div class="player-header">
+        <div class="player-initials">HV</div>
+        <div>
+          <div class="player-name">Herbert W. "Skip" Virgin IV</div>
+          <div class="player-affiliation">Washington University → Vir Biotechnology</div>
+          <div class="player-role">Virology &amp; Autophagy</div>
+        </div>
+      </div>
+      <div class="player-bio">
+        <p>Virologist and immunologist whose collaboration with Stappenbeck connected autophagy — a fundamental cellular process — to Paneth cell biology and Crohn's disease. Later showed that viral infection (norovirus) interacts with ATG16L1 genotype to trigger Paneth cell abnormalities, adding a gene × environment dimension. Subsequently moved to Vir Biotechnology as CSO.</p>
+      </div>
+      <div class="player-key">
+        <strong>Key contributions:</strong> ATG16L1 autophagy–Paneth cell link (<em>Nature</em>, 2008); virus × gene interaction model (<em>Cell</em>, 2010)
+      </div>
+    </div>
+
+    <div class="player-card">
+      <div class="player-header">
+        <div class="player-initials">CB</div>
+        <div>
+          <div class="player-name">Charles L. Bevins</div>
+          <div class="player-affiliation">University of California, Davis</div>
+          <div class="player-role">Defensin Biology</div>
+        </div>
+      </div>
+      <div class="player-bio">
+        <p>Microbiologist and immunologist who was a key collaborator with Wehkamp on the defensin work, providing expertise on antimicrobial peptide biology and transgenic mouse models. His lab's work on HD5-transgenic mice showed that changes in defensin expression levels comparable to those in Crohn's had a pronounced impact on luminal microbiota — providing functional proof that defensin deficiency has downstream consequences.</p>
+      </div>
+      <div class="player-key">
+        <strong>Key contributions:</strong> Co-first/senior author on the 2005 <em>PNAS</em> paper; HD5-transgenic mouse microbiome studies; holds patents on defensin-based therapies
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== TAB 5: EXECUTIVE SUMMARY ===================== -->
+<section class="tab-panel" id="exec">
+  <div class="prose">
+    <p class="section-label">For Industry</p>
+    <h2>Why Pharma Should Care About Paneth Cells</h2>
+
+    <p class="lead-text">The Paneth cell story is not merely a historical curiosity or an academic footnote. It represents a foundational shift in understanding Crohn's disease pathogenesis that has direct implications for drug development strategy, patient stratification, and the next generation of IBD therapeutics.</p>
+
+    <div class="metric-row">
+      <div class="metric-card">
+        <div class="metric-value">~70%</div>
+        <div class="metric-label">of Crohn's patients have small intestinal involvement</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">~30%</div>
+        <div class="metric-label">carry NOD2 mutations linked to Paneth cell defects</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">20+ yrs</div>
+        <div class="metric-label">Paneth cell phenotype stability in patients</div>
+      </div>
+    </div>
+
+    <div class="sep"></div>
+
+    <h2>1. Current Therapeutics Treat Downstream — Not Upstream</h2>
+
+    <p>The anti-TNF revolution (infliximab, adalimumab), followed by anti-integrins (vedolizumab), anti-IL-12/23 (ustekinumab), and anti-IL-23 (risankizumab, guselkumab, mirikizumab) all target the <strong>inflammatory cascade</strong> — the downstream consequence of mucosal barrier failure. They manage the fire, but they don't fix the fire alarm.</p>
+
+    <p>If ileal Crohn's is fundamentally a disease of defective antimicrobial defense — a failure of Paneth cells to produce adequate α-defensins — then targeting inflammation alone can never be curative. It can suppress symptoms, but the barrier defect persists. This explains the high rates of post-surgical recurrence, the need for maintenance therapy, and the fact that no current biologic achieves durable remission in the majority of patients.</p>
+
+    <div class="callout">
+      <div class="callout-title">The Implication</div>
+      <p style="margin-bottom: 0;">Any therapeutic strategy that <em>restores</em> Paneth cell function — whether through Wnt pathway agonism, defensin replacement, monocyte reprogramming, or correction of the upstream stem cell differentiation defect — would be addressing the cause rather than the consequence. This is a greenfield opportunity in a market dominated by symptom management.</p>
+    </div>
+
+    <div class="sep"></div>
+
+    <h2>2. Patient Stratification Is Already Possible</h2>
+
+    <p>Stappenbeck and Liu's Paneth cell phenotyping system (Type I vs Type II) divides Crohn's patients into biologically meaningful subgroups using routine biopsy material. Type I patients (high proportion of abnormal Paneth cells) have more aggressive disease and shorter time to recurrence after surgery. This stratification is:</p>
+
+    <p><strong>Stable over time</strong> — phenotypes persist for over 20 years, making them true biomarkers rather than state-dependent measures. <strong>Genetically grounded</strong> — NOD2 and ATG16L1 risk alleles have additive effects on Paneth cell abnormalities. <strong>Cross-ethnic</strong> — the phenotyping system works in Japanese CD cohorts as well as European, even though the underlying genetic variants differ (LRRK2 rather than ATG16L1 in Japanese patients). <strong>Feasible from biopsies</strong> — can be assessed from routine endoscopic material, not just surgical resections.</p>
+
+    <p>For clinical trial design, this means the ability to enrich for a Paneth cell–driven patient population in whom barrier-restoring therapies would be most likely to show effect — a precision medicine approach to a disease historically treated as monolithic.</p>
+
+    <div class="sep"></div>
+
+    <h2>3. The Wnt Pathway Is a Druggable Target</h2>
+
+    <p>The 2015 discovery that Wnt ligands from healthy monocytes can rescue Paneth cell defensin expression — even in tissue from Crohn's patients — suggests a therapeutic path. Wnt pathway modulation is already an area of active drug development in oncology (where it is typically inhibited). In the IBD context, the need is the opposite: <strong>Wnt activation</strong> or augmentation, specifically in the intestinal crypt.</p>
+
+    <p>Challenges are significant — Wnt signaling is pleiotropic and oncogenic in many contexts — but the specificity of the Paneth cell response to Wnt dosage suggests that a narrow therapeutic window may exist. Organoid-based screening systems could accelerate identification of compounds that selectively boost Paneth cell defensin output without broadly activating Wnt in other tissues.</p>
+
+    <div class="sep"></div>
+
+    <h2>4. The Microbiome Connection Creates Combinatorial Opportunities</h2>
+
+    <p>Paneth cell defects drive dysbiosis. Dysbiosis drives inflammation. Inflammation further damages the epithelium. This vicious cycle suggests that <strong>combination strategies</strong> — pairing barrier-restoring agents with microbiome-modulating approaches (defined bacterial consortia, next-gen probiotics) or with anti-inflammatory biologics — could achieve deeper and more durable responses than any single modality.</p>
+
+    <p>The fact that Paneth cell phenotype correlates with specific microbiome signatures (reduced <em>Faecalibacterium</em>, altered <em>Erysipelotrichaceae</em>) means that microbiome-based companion diagnostics could be developed alongside Paneth cell–targeted therapeutics.</p>
+
+    <div class="sep"></div>
+
+    <h2>5. This Is a Foundational Story — Not a Finished One</h2>
+
+    <p>The Paneth cell hypothesis is still maturing. Key unanswered questions remain:</p>
+
+    <p><strong>What controls monocyte Wnt ligand expression?</strong> The bone marrow–epithelial crosstalk is established, but the upstream regulation of Wnt production in monocytes is incompletely understood. Druggable nodes may lie further up this chain. <strong>Can defensin replacement work therapeutically?</strong> Wehkamp, Stange, and Bevins hold patents on defensin-based treatments — but delivery, stability, and dosing in the GI tract are technically challenging. <strong>How do environmental factors modulate Paneth cell function?</strong> Smoking, diet, and childhood antibiotic exposure all impact Paneth cells, but the molecular mechanisms are not fully mapped. These represent modifiable risk factors that could be targeted with non-pharmacological interventions.</p>
+
+    <div class="callout">
+      <div class="callout-title">The Bottom Line</div>
+      <p style="margin-bottom: 0;">The Paneth cell story represents the most scientifically coherent explanation for <em>why Crohn's disease preferentially affects the small intestine</em> — the question that has puzzled gastroenterologists since Burrill Crohn himself. It reframes ileal CD from an autoimmune disease to a <strong>barrier defense disease</strong>, opening an entirely new therapeutic axis that no current drug on the market directly addresses. For any organization with a serious IBD strategy, understanding this biology is not optional — it is foundational to where the field is headed.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  Content synthesized from primary scientific literature. For educational and strategic reference purposes. Updated March 2026.
+</footer>
+
+<script>
+  const tabs = document.querySelectorAll('.tab-btn');
+  const panels = document.querySelectorAll('.tab-panel');
+
+  tabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+</script>
+
+</body>
+</html>
